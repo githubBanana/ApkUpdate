@@ -17,9 +17,9 @@ import android.text.TextUtils;
 import java.io.File;
 
 /**
- * @Description 更新服务
- * @Author xs.lin
- * @Date 2017/2/22 13:37
+ *  更新服务
+ *  xs.lin
+ *  2017/2/22 13:37
  */
 
 public class UpdateService extends Service {

@@ -10,9 +10,9 @@ import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AlertDialog;
 
 /**
- * @Description
- * @Author xs.lin
- * @Date 2017/2/22 11:50
+ *
+ *  xs.lin
+ *  2017/2/22 11:50
  */
 
 public class UpdateDialog extends DialogFragment {
