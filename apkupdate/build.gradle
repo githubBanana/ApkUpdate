@@ -5,7 +5,7 @@ apply plugin: 'com.jfrog.bintray'
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.0"
-    resourcePrefix "apkUpdateService"    //这个随便填
+    resourcePrefix "apkUpdateService"
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 25
@@ -104,7 +104,7 @@ bintray {
     key = properties.getProperty("bintray.apikey")
     configurations = ['archives']
     pkg {
-        repo = "apk-update-service"
+        repo = "apk-update-service"  //对应bintray账号上的仓库名称
         name = "apkupdateservice"    //发布到JCenter上的项目名字
         websiteUrl = siteUrl
         vcsUrl = gitUrl
