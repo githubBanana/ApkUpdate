@@ -51,7 +51,7 @@ public class UpdateDownloadRequest implements Runnable{
                 connection.connect();
                 currentLength = connection.getContentLength();
                 if(!Thread.currentThread().isInterrupted()){
-                    downloadResponseHandler.sendResponseMessage(connection.getInputStream());
+                    downloadResponseHandler.sendResponseMessage(connection.getInputStream(),currentLength);
                 }
 
 
@@ -181,7 +181,7 @@ public class UpdateDownloadRequest implements Runnable{
             listener.onFailure();
         }
 
-        void sendResponseMessage(InputStream is){
+        void sendResponseMessage(InputStream is,long fileLength){
 
             RandomAccessFile randomAccessFile = null;
             completeSize=0;
@@ -190,6 +190,7 @@ public class UpdateDownloadRequest implements Runnable{
                 int length=-1;//读写长度
                 int limit=0;
                 randomAccessFile = new RandomAccessFile(localFilePath, "rwd");
+                randomAccessFile.setLength(fileLength);
 
                 while((length = is.read(buffer))!=-1){
 
